@@ -47,7 +47,7 @@
                         <td> {{$x++}} </td>
                         <td> {{$post->judul}} </td>
                         <td> {{$post->status}} </td>
-                        <td> {{$post->user->name}} </td>
+                        <td> {{ $post->user ? $post->user->name : '-' }} </td>
                         <td> {{$post->tgl_buat}} </td>
                         <td> 
                             <a class="btn btn-xs btn-info" href="{{url('/panel/berita/'.$post->id.'/duplikasi')}}"><i class="icon-docs"></i></a>

@@ -326,7 +326,7 @@
 
       </div>
     </section><!-- End Portfolio Section -->
-     <section id="team" class="team sections-bg">
+     {{-- <section id="team" class="team sections-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
@@ -371,7 +371,7 @@
         </div>
 
       </div>
-    </section><!-- End Our Team Section -->
+    </section><!-- End Our Team Section --> --}}
 
 
 <!-- Code begins here -->
