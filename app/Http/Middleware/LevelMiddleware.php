@@ -18,7 +18,8 @@ class LevelMiddleware
     {
         $user = Auth::user();
         if($user && Auth::user()->level_id != $hak) {
-            return App::abort(403, 'Forbidden');
+            // return App::abort(403, 'Forbidden');
+            return redirect('/panel');
         }
         return $next($request);
     }

@@ -66,3 +66,14 @@ Route::group(['middleware' => ['auth','level:1']], function(){
 
 });
 //===============================Akhir Bagian Administrasi=================================//
+
+Route::get('/webmin', ['as' => 'login', 'uses' => 'Auth\LoginController@showLoginForm']);
+Route::post('/webmin', ['as' => 'login.post', 'uses' => 'Auth\LoginController@login']);
+Route::post('/logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
+
+Route::group(['middleware' => ['auth','level:2']], function(){
+	Route::get('/panel', 'HomeController@index');
+	Route::resource('/panel/berita', 'PostController');
+	Route::resource('/panel/info', 'InfoController');
+	return redirect('/panel');
+});
