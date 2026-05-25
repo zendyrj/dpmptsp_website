@@ -75,5 +75,16 @@ Route::group(['middleware' => ['auth','level:2']], function(){
 	Route::get('/panel', 'HomeController@index');
 	Route::resource('/panel/berita', 'PostController');
 	Route::resource('/panel/info', 'InfoController');
+	Route::resource('/panel/menu', 'MainmenuController');
+	Route::get('/panel/sosmed/{x}','SosmedController@edit');
+	Route::put('/panel/sosmed/{x}','SosmedController@update');
+	Route::get('/panel/pengaturan','AlamatController@index');
+	Route::put('/panel/pengaturan1/{x}','AlamatController@update1');
+	Route::put('/panel/pengaturan2/{x}','AlamatController@update2');
+	Route::get('/panel/lokasi','MapController@index');
+	Route::put('/panel/lokasi/{x}','MapController@update');
+	Route::get('/panel/slider', 'SliderController@index');
+	Route::post('/panel/slider', 'SliderController@store');
+	Route::delete('/panel/slider/{x}', 'SliderController@destroy');
 	return redirect('/panel');
 });
